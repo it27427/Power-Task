@@ -1,0 +1,75 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.bookingheader {
+  background: $white;
+  filter: $dropshadow;
+
+  &-nav {
+    @include flex-center-between;
+    padding: size(14) size(0);
+
+    @include breakpoint(tab992) {
+      padding: size(20) size(0);
+    }
+
+    .logo {
+      width: size(100);
+      height: size(24);
+      @include flex-center;
+      overflow: hidden;
+
+      @include breakpoint(tab992) {
+        width: size(130);
+        height: size(32);
+        margin-left: size(0);
+      }
+
+      img {
+        @include wh100;
+        object-fit: contain;
+      }
+    }
+    
+    .backlink,
+    .crosslink {
+      @include square(32);
+      @include circle;
+      @include flex-center;
+      overflow: hidden;
+
+      @include breakpoint(tab992) {
+        @include square(48);
+      }
+
+      svg {
+        @include wh100;
+      }
+    }
+
+    .backlink {
+      @include hover {
+        svg {
+          circle {
+            stroke: darken($primary, 25%);
+          }
+          
+          path {
+            fill: darken($primary, 25%);
+          } 
+        }
+      }
+    }
+
+    .crosslink {
+      @include hover {
+        svg {
+          circle,
+          path {
+            stroke: darken($primary, 25%);
+          }   
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.vue-custom-tooltip {
+  &:before {
+    border-top-color: $primary !important;
+    // @include font($primaryFont, 14, medium, normal, 20);
+  }
+
+  &:after {
+    background: $primary !important;
+    padding: size(8) size(16) !important;
+    font-family: $primaryFont !important;
+    font-size: size(12) !important;
+    font-weight: 500 !important;
+  }
+}

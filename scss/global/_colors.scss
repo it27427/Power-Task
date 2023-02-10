@@ -1,0 +1,84 @@
+// DEFAULT COLORS
+$bodybg: hsl(216, 100%, 99%); //#FAFCFF
+$white: hsl(0, 0%, 100%); //#ffffff
+$black: hsl(0, 0%, 0%); //#000000
+
+// THEME-COLORS
+$primary: hsl(265, 70%, 58%); //#884bdf
+$primaryLight: hsl(13, 47%, 94%); //#F7ECE9
+$primaryDark: hsl(18, 50%, 72%); //#DBA994
+
+$headlinebg: hsl(248, 53%, 58%); //#6a5acd
+
+// BACKGROUND-COLORS
+$reviewhoverbg: hsla(18, 60%, 81%, 0.2); //rgba(236, 195, 178, 0.2)
+$sectionbg: linear-gradient(
+  94.09deg,
+  rgba(219, 169, 148, 0.5) 1.12%,
+  rgba(246, 225, 217, 0.5) 100%
+);
+$badgebg: hsl(13, 44%, 94%); //#F6EBE8
+$bluebg: hsla(202, 100%, 56%, 0.15); //rgba(29, 174, 255, 0.15)
+$green: hsl(173, 83%, 37%); //#10AB99
+$greenbg: hsl(220, 100%, 96%); //#EDF3FF
+$pillbg: hsla(0, 0%, 85%, 0.3); //rgba(217, 217, 217, 0.3)
+$sidebg: hsla(18, 60%, 81%, 0.1); //rgba(236, 195, 178, 0.1)
+$gray: hsla(0, 0%, 29%, 0.6); //rgba(75, 75, 75, 0.6)
+$uploadbg: hsl(0, 0%, 98%); //#F9F9F9
+$btnbg: hsla(18, 60%, 81%, 0.3); //rgba(236, 195, 178, 0.3)
+
+$pendingbg: hsla(47, 100%, 51%, 0.1); //rgba(255, 201, 7, 0.1)
+$pendingcolor: hsl(47, 100%, 51%); //#FFC907
+$confirmedbg: hsla(173, 83%, 37%, 0.1); //rgba(16, 171, 153, 0.1)
+$confirmedcolor: hsl(173, 83%, 37%); //#10AB99
+$yellow: hsl(60, 100%, 50%); //#ffff00
+
+$artistcolor: hsl(283, 39%, 53%); //#9B59B6
+$dermatologistbg: hsla(195, 100%, 32%, 0.1); //rgba(0, 125, 165, 0.1)
+$dermatologistcolor: hsl(195, 100%, 32%); //#007DA5
+$progressbg: hsl(0, 0%, 95%); //#F2F2F2
+$tablebg: rgba(75, 75, 75, 0.05);
+
+// TABLE BADGES
+$successbg: rgba(0, 171, 152, 0.1);
+$successcolor: hsl(173, 100%, 34%); //#00AB98
+$mirandabg: rgba(156, 112, 93, 0.1);
+$mirandacolor: hsl(18, 25%, 49%); //#9C705D
+$aurorabg: rgba(128, 128, 128, 0.1);
+$auroracolor: hsl(0, 0%, 50%); //#808080
+$pandorabg: rgba(194, 160, 83, 0.1);
+$pandoracolor: hsl(42, 48%, 54%); //#C2A053
+// TEXT-COLORS
+$headingText: hsl(0, 0%, 7%); //#121212
+$primaryText: hsl(0, 0%, 29%); //#4B4B4B
+$textSuccess: hsl(173, 83%, 37%); //#10AB99
+$danger: hsl(0, 100%, 61%); //#FF3636
+$blue: hsl(202, 100%, 56%); //#1DAEFF
+$textDark: hsl(218, 24%, 27%); //#344054
+$adorablue: hsl(209, 100%, 50%); //#0085FF
+
+// BORDER-COLORS
+$linkborder: hsla(0, 0%, 29%, 0.3); //rgba(75, 75, 75, 0.3)
+$signinborder: hsla(0, 0%, 29%, 0.1); //rgba(75, 75, 75, 0.1)
+$sideborder: hsla(0, 0%, 7%, 0.1); //rgba(18, 18, 18, 0.1)
+$buttonborder: hsl(217, 16%, 84%); //#D0D5DD
+
+// SHADOWS
+$dropshade: hsla(0, 0%, 7%, 0.05); //rgba(18, 18, 18, 0.05)
+$slideshade: hsla(223, 100%, 86%, 0.2); //rgba(183, 203, 255, 0.2)
+$timeshade: hsla(223, 100%, 75%, 0.1); //rgba(125, 162, 255, 0.1)
+$modshadow-1: hsla(220, 43%, 11%, 0.08); //rgba(16, 24, 40, 0.08)
+$modshadow-2: hsla(220, 43%, 11%, 0.03); //rgba(16, 24, 40, 0.03)
+$btnshadow: hsla(220, 43%, 11%, 0.05); //rgba(16, 24, 40, 0.05)
+
+// BOX-SHADOWS
+$dropshadow: drop-shadow(0 0.125rem 0.375rem $dropshade);
+$sideshadow: 0 0.125rem 0.625rem $slideshade;
+$timeshadow: 0 0.125rem 0.625rem $timeshade;
+$modalshadow: 0 1.25rem 1.5rem -0.25rem $modshadow-1,
+  0 0.5rem 0.5rem -0.25rem $modshadow-2;
+$buttonshadow: 0 0.0625rem 0.125rem $btnshadow;
+
+$textshade: rgba(18, 18, 18, 0.25);
+$textshadow: 0 0.25rem 0.5rem $textshade;
+$headershadow: 0 4px 20px rgb(0 0 0 / 10%);

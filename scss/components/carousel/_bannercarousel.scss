@@ -1,0 +1,49 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+
+.carousel {
+  @include wh100;
+
+  &-inner {
+    height: 100%;
+  }
+
+  &-item {
+    @include wh100;
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: size(48);
+    padding: size(64) 0;
+
+    @include breakpoint(tab992) {
+      padding: size(96) 0;
+    }
+
+    @include breakpoint(desktop1400) {
+      padding: size(160) 0;
+    }
+
+    .carousel-info {
+      @include flex-center-column;
+      gap: size(32);
+      text-align: center;
+    }
+  }
+
+  &-bg {
+    position: absolute;
+    inset: 0;
+    @include wh100;
+    z-index: -1;
+    @include flex-center;
+    overflow: hidden;
+
+    img {
+      @include wh100;
+      object-fit: cover;
+    }
+  }
+}

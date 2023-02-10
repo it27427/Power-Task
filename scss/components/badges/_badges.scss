@@ -1,0 +1,149 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.slidebadge {
+  @include setBgColor($primary, $headingText);
+  @include radius(12.5);
+  @include flex-center;
+  font-size: size(10);
+  font-weight: 400;
+  padding: size(4) size(10);
+  text-align: center;
+}
+
+.featurebadge {
+  @include setBgColor($white, $headingText);
+  @include radius(12.5);
+  @include flex-center;
+  font-size: size(10);
+  font-weight: 400;
+  padding: size(8);
+  text-align: center;
+  height: size(24);
+}
+
+.salonbadge {
+  max-width: size(80);
+  min-width: size(68);
+  @include setBgColor(transparent, $headingText);
+  @include radius(12.5);
+  @include flex-center;
+  font-size: size(10);
+  font-weight: 500;
+  padding: size(8);
+  text-align: center;
+  height: size(24);
+
+  &.open {
+    @include setBgColor($primary, $headingText);
+  }
+
+  &.closed {
+    @include setBgColor($danger, $white);
+  }
+}
+
+.status {
+  padding: size(5) size(24);
+  @include flex-center;
+  text-align: center;
+  font-size: size(14);
+  font-weight: 500;
+  @include radius(18.5);
+
+  @include breakpoint(tab992) {
+    font-size: size(16);
+  }
+
+  &.pending {
+    @include setBgColor($pendingbg, $pendingcolor);
+  }
+
+  &.confirmed {
+    @include setBgColor($confirmedbg, $confirmedcolor);
+  }
+
+  &.cancelled {
+    @include setBgColor(rgba($danger, 0.1), $danger);
+  }
+}
+
+.servicestatus {
+  padding: size(5) size(15);
+  @include flex-center;
+  text-align: center;
+  font-size: size(14);
+  font-weight: 500;
+  @include radius(18.5);
+
+  @include breakpoint(tab992) {
+    font-size: size(16);
+  }
+
+  &.skincare {
+    @include setBgColor($confirmedbg, $confirmedcolor);
+  }
+
+  &.makeup {
+    @include setBgColor($sidebg, $primaryText);
+  }
+
+  &.dermatologist {
+    @include setBgColor($dermatologistbg, $dermatologistcolor);
+  }
+
+  &.artist {
+    @include setBgColor(rgba($artistcolor, 0.1), $artistcolor);
+  }
+}
+
+.badge-consult {
+  @include setBgColor($primary, $headingText);
+  @include radius(12.5);
+  font-size: size(12);
+  font-weight: 400;
+  padding: size(5) size(10);
+  text-align: center;
+}
+
+.badge-table {
+  display: inline-block;
+  padding: size(5) size(8);
+  @include flex-center;
+  @include radius(130);
+  text-align: center;
+  font-size: size(8);
+
+  @include breakpoint(mobile500) {
+    font-size: size(10);
+  }
+
+  @include breakpoint(mobile768) {
+    font-size: size(12);
+  }
+
+  @include breakpoint(tab992) {
+    font-size: size(14);
+    padding: size(8) size(16);
+  }
+
+  @include breakpoint(desktop1200) {
+    font-size: size(16);
+  }
+
+  &.success {
+    @include setBgColor($successbg, $successcolor);
+  }
+
+  &.miranda {
+    @include setBgColor($mirandabg, $mirandacolor);
+  }
+
+  &.aurora {
+    @include setBgColor($aurorabg, $auroracolor);
+  }
+
+  &.pandora {
+    @include setBgColor($pandorabg, $pandoracolor);
+  }
+}

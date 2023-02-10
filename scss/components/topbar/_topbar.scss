@@ -1,0 +1,29 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.topbar {
+  background: $primaryLight;
+  display: none;
+
+  @include breakpoint(tab992) {
+    display: block;
+  }
+
+  &-content {
+    @include flex-center;
+    height: size(40);
+  }
+
+  &-text {
+    @include font($primaryFont, 12, normal, normal, 15.6);
+    text-align: center;
+
+    @include breakpoint(mobile768) {
+      font-size: size(14);
+    }
+
+    @include breakpoint(tab992) {
+      font-size: size(16);
+    }
+  }
+}

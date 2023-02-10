@@ -1,0 +1,191 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.header {
+  background: $white;
+  // box-shadow: $headershadow;
+  @include flex-center-column;
+  @include w100;
+  padding: size(8) 0;
+  
+  &-content {
+    @include flex-column;
+    @include w100;
+  }
+
+  &-nav {
+    @include w100;
+    @include flex-center-vert;
+
+    .hamburger {
+      @include flex-center;
+      @include square(24);
+      
+      @include breakpoint(tab992) {
+        display: none;
+      }
+      
+      .btn-hamburger {
+        @include square(24);
+        @include flex-center;
+
+        svg {
+          @include wh100;
+
+          path {
+            @include transitionsall;
+          }
+        }
+
+        @include hover {
+          svg {
+            path {
+              fill: $primary;
+            }
+          }
+        }
+      }
+    }
+
+    .logo {
+      width: size(130);
+      @include flex-center;
+      gap: size(5);
+
+      .lefticon {
+        @include square(40);
+        @include flex-center;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .logo-text {
+        color: rebeccapurple;
+        font-weight: bold;
+        font-size: size(18);
+        text-transform: uppercase;
+      }
+
+      .righticon {
+        @include square(40);
+        @include flex-center;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    .titlebox {
+      .title {
+        position: relative;
+        font-size: size(20);
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: size(-4);
+          left: 0;
+          height: size(8);
+          width: 100%;
+          @include  border(solid, 2, #ccc);
+          border-color: transparent transparent #ccc transparent;
+          border-radius: 40%;
+        }
+      }
+    }
+
+    .rightbox {
+      .menubox {
+        a {
+          font-size: size(14);
+        }
+      }
+    }
+
+    .leftpart {
+      form {
+        .form-control {
+          font-size: size(14);
+        }
+      }
+    }
+
+    .leftpart,
+    .rightpart {
+      button {
+        text-transform: uppercase;
+        font-size: size(12);
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.desktopmenu {
+  background: $primary;
+
+  .desktoplist {
+    @include list-horizontal;
+
+    &-link {
+      @include flex-center;
+      @include setBgColor($primary, $white);
+      font-size: size(15);
+      font-weight: 500;
+      padding: size(9.5) size(16);
+      text-align: center;
+      @include transitionsall;
+    }
+
+    &-item {
+      position: relative;
+
+      .desktopdropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: size(160);
+        display: none;
+        @extend %animation;
+        @extend %slideUpIn;
+
+        .sublist {
+          @include list-vertical;
+          background: $white;
+          box-shadow: $headershadow;
+
+          &-link {
+            @include setBgColor($white, $primary);
+            font-size: size(13);
+            font-weight: 500;
+            padding: size(8) size(16);
+            display: inline-block;
+            @include w100;
+            @include transitionsall;
+
+            @include hover {
+              @include setBgColor($primary, $white);
+            }
+          }
+        }
+      }
+
+      @include hover {
+        .desktoplist-link {
+          @include setBgColor(darken($primary, 20%), $white);
+        }
+
+        .desktopdropdown {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.langswitch {
+  position: relative;
+  display: inline-block;
+
+  .check-toggle {
+    position: absolute;
+    margin-left: size(-9999);
+    visibility: hidden;
+
+    + label {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+
+  .check-toggle-round-flat {
+    &:checked ~ .off {
+      color: $primary;
+    }
+
+    &:checked ~ .on {
+      color: $white;
+    }
+
+    + label {
+      padding: size(4);
+      width: size(100);
+      height: size(36);
+      background: $primary;
+      @include radius(60);
+
+      &::before,
+      &::after {
+        display: block;
+        position: absolute;
+        content: "";
+      }
+
+      &::before {
+        top: size(2);
+        left: size(2);
+        bottom: size(2);
+        right: size(2);
+        background: $primary;
+        @include radius(60);
+      }
+
+      &::after {
+        top: size(4);
+        left: size(4);
+        bottom: size(4);
+        // width: size(48);
+        width: 50%;
+        background: $white;
+        @include radius(60);
+        @include transition(margin, $time);
+      }
+    }
+
+    &:checked + label:after {
+      margin-left: size(42);
+    }
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    @include translateY(-50%);
+    @include flex-center;
+    font-size: size(10);
+    font-weight: 500;
+    pointer-events: none;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 .0625rem 0 rgba($black, .06);
+    width: 52%;
+
+    &.on {
+      left: 0;
+      padding-left: size(2);
+      color: $primary;
+    }
+
+    &.off {
+      right: 0;
+      padding-right: size(2);
+      color: $white;
+    }
+  }
+}
+
+.form-control {
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: $primary;
+  }
+}

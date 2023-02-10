@@ -1,0 +1,426 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.modal {
+  &-content {
+    @include radius(8);
+    box-shadow: $modalshadow;
+  }
+  
+  &-header {
+    border-bottom: 0;
+
+    .btn-close {
+      @include square(24);
+      @include flex-center;
+      overflow: hidden;
+      opacity: 1;
+
+      svg {
+        @include wh100;
+        @include transitiontransform;
+      }
+
+      @include hover {
+        svg {
+          @include rotate(90);
+
+          path {
+            stroke: $danger;
+          }
+        }
+      }
+    }
+  }
+}
+
+.reviewmodal {
+  .modal-content {
+    @include radius(8);
+    border: none;
+    outline: none;
+  }
+
+  .modal-header {
+    padding: size(24) size(24) size(32);
+
+    .modal-title {
+      font-size: size(19);
+      font-weight: 500;
+    }
+  }
+  
+  .modal-body {
+    @include flex-column;
+    gap: size(24);
+    padding: size(0) size(24) size(28);
+
+    .ratingbox {
+      @include flex-column;
+      gap: size(12);
+
+      .title {
+        color: $primaryText;
+        font-weight: 400;
+      }
+
+      .ratinglist {
+        @include list-horizontal;
+        gap: size(4);
+
+        &-item {
+          cursor: pointer;
+          @include square(24);
+          @include flex-center;
+          overflow: hidden;
+
+          svg {
+            @include wh100;
+          }
+        }
+      }
+    }
+
+    .reviewbox {
+      @include flex-column;
+      gap: size(8);
+
+      label {
+        font-weight: 400;
+        color: $primaryText;
+      }
+
+      textarea {
+        @include border(solid, 1, $signinborder);
+        @include radius(4);
+        color: $headingText;
+        font-size: size(15);
+        font-weight: 300;
+        padding: size(16);
+        @include transitionsall;
+
+        &:focus {
+          border-color: $primary;
+        }
+      }
+    }
+
+    .addimages {
+      @include flex-column;
+      gap: size(8);
+
+      .title {
+        font-weight: 400;
+        color: $primaryText;
+      }
+
+      .uploadimage {
+        @include square(112);
+        background: $uploadbg;
+        @include border(solid, 1, $signinborder);
+        @include radius(4);
+        cursor: pointer;
+        @include flex-center;
+        overflow: hidden;
+        position: relative;
+
+        label {
+          @include wh100;
+          cursor: pointer;
+          @include flex-center;
+          overflow: hidden;
+
+          .icon {
+            cursor: pointer;
+            @include square(30);
+            @include flex-center;
+            overflow: hidden;
+  
+            svg {
+              @include wh100;
+            }
+          }
+        }
+
+        .btn-remove {
+          position: absolute;
+          top: size(8);
+          right: size(8);
+          padding: size(8);
+          @include square(25);
+          background: rgba($danger, 0.1);
+          @include circle;
+          @include flex-center;
+          overflow: hidden;
+          z-index: 20;
+
+          svg {
+            @include wh100;
+          }
+        }
+      }
+    }
+  }
+}
+
+.reviewproduct {
+  @include flex;
+  gap: size(16);
+
+  &-thumbnail {
+    @include square(48);
+    @include radius(8);
+    @include flex-center;
+    overflow: hidden;
+
+    img {
+      @include wh100;
+      object-fit: cover;
+    }
+  }
+
+  &-details {
+    @include flex-column;
+
+    .date {
+      color: $gray;
+    }
+
+    .title {
+      font-weight: 400;
+    }
+  }
+}
+
+.modal-footer {
+  border-top: 0;
+  @include radius(0);
+  @include flex-center;
+  gap: size(12);
+  flex-wrap: nowrap;
+  padding: size(0) size(24) size(32);
+
+  .btn-close,
+  .btn-send,
+  .btn-yes {
+    box-shadow: $buttonshadow;
+    @include radius(4);
+    @include flex-center;
+    font-weight: 600;
+    width: 50%;
+    height: size(44);
+    text-align: center;
+    @include transitionsall;
+  }
+
+  .btn-close {
+    @include setBgColor($white, $textDark);
+    @include border(solid, 1, $buttonborder);
+    opacity: 1;
+
+    @include hover {
+      @include setBgColor($textDark, $white);
+      border-color: $textDark;
+    }
+  }
+
+  .btn-send {
+    @include setBgColor($confirmedcolor, $white);
+    @include border(solid, 1, $confirmedcolor);
+
+    @include hover {
+      @include setBgColor(transparent, $confirmedcolor);
+    }
+  }
+
+  .btn-yes {
+    @include setBgColor($danger, $white);
+    @include border(solid, 1, $danger);
+
+    @include hover {
+      @include setBgColor(transparent, $danger);
+    }
+  }
+}
+
+.searchmodal {
+  .modal-header {
+    padding: size(24);
+
+    .modal-title {
+      font-size: size(19);
+      font-weight: 500;
+    }
+  }
+
+  .modal-body {
+    padding: size(24);
+    padding-top: 0;
+
+    .search {
+      @include flex-column;
+      gap: size(24);
+
+      &-header {
+        color: $gray;
+        font-size: size(16);
+        font-weight: 400;
+      }
+
+      &-body {
+        @include flex-column;
+        gap: size(12);
+
+        .inputbox {
+          padding: size(10) size(14);
+          @include flex-center-vert;
+          gap: size(8);
+          @include border(solid, 1, $signinborder);
+          @include radius(4);
+          height: size(48);
+          @include transitionsall;
+
+          .icon {
+            @include square(20);
+            @include flex-center;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0.3;
+
+            svg {
+              @include wh100;
+            }
+          }
+
+          .inputinfo {
+            width: calc(100% - size(28));
+
+            .searchfield {
+              @include setBgColor($white, $primaryText);
+              border: none;
+              font-size: size(14);
+              @include w100;
+
+              &::placeholder {
+                color: rgba($primaryText, 0.3);
+              }
+            }
+          }
+
+          &:focus-within {
+            border-color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.manageappointment {
+  margin-top: size(16);
+  @include flex-center-column;
+  gap: size(24);
+
+  .btn-reschedule,
+  .btn-cancelappointment {
+    @include w100;
+    @include flex-center-between;
+
+    .btninfo {
+      @include flex-center-vert;
+      gap: size(8);
+
+      .icon {
+        @include square(30);
+        @include flex-center;
+        overflow: hidden;
+
+        svg {
+          @include wh100;
+        }
+      }
+
+      .text {
+        color: $headingText;
+        font-weight: 400;
+        font-size: size(19);
+      }
+    }
+
+    .arrow {
+      width: size(8);
+      height: size(15);
+      @include flex-center;
+      overflow: hidden;
+
+      svg {
+        @include wh100;
+      }
+    }
+  }
+
+
+  .btn-reschedule {
+    @include hover {
+      .btninfo {
+        .icon {
+          svg {
+            path {
+              fill: darken($primary, 25%);
+            }
+          }
+        }
+  
+        .text {
+          color: darken($primary, 25%);
+        }
+      }
+  
+      .arrow {
+        svg {
+          path {
+            fill: darken($primary, 25%);
+          }
+        }
+      }
+    }
+  }
+
+  .btn-cancelappointment {
+    @include hover {
+      .btninfo {
+        .icon {
+          svg {
+            path {
+              stroke: $danger;
+            }
+          }
+        }
+  
+        .text {
+          color: $danger;
+        }
+      }
+  
+      .arrow {
+        svg {
+          path {
+            fill: $danger;
+          }
+        }
+      }
+    }
+  }
+}
+
+.canceldetail {
+  @include flex-column;
+  gap: size(20);
+
+  .description {
+    .text {
+      color: $gray;
+      letter-spacing: size(0.32);
+    }
+  }
+}

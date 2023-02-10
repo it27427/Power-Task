@@ -1,0 +1,352 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.offcanvas {
+
+  &.offcanvas-top {
+    border-bottom: 0;
+    height: 100vh;
+
+    .offcanvas-header {
+      height: size(48);
+      background: $white;
+    }
+
+    .offcanvas-body {
+      padding: 0;
+      background: $bodybg;
+
+      .mobprofile {
+        @include flex-column;
+        gap: size(24);
+
+        &-header {
+          @include flex-center-column;
+          gap: size(24);
+          text-align: center;
+          background: $white;
+
+          .user-thumbnail {
+            @include square(120);
+            @include circle;
+            @include flex-center;
+            overflow: hidden;
+
+            img {
+              @include wh100;
+              object-fit: cover;
+            }
+          }
+
+          .name {
+            color: $headingText;
+            font-weight: 500;
+          }
+        }
+
+        &-body {
+          .usrlist {
+            @include list-vertical;
+
+            &-link {
+              padding: size(10) size(20);
+              @include flex-center-between;
+              @include border-single(bottom, solid, 1, $linkborder);
+
+              .icontitle {
+                @include flex-center-vert;
+                gap: size(8);
+                width: calc(100% - size(5));
+
+                .icon {
+                  @include square(20);
+                  @include flex-center;
+                  overflow: hidden;
+
+                  svg {
+                    @include wh100;
+                  }
+                }
+
+                .title {
+                  color: $headingText;
+                  @include font($primaryFont, 14, light, normal, 18);
+                  width: calc(100% - size(28));
+                  text-transform: uppercase;
+                }
+              }
+
+              .arrow {
+                width: size(5);
+                height: size(10);
+                @include flex-center;
+                overflow: hidden;
+
+                svg {
+                  @include wh100;
+                }
+              }
+
+              &:hover:not(.active) {
+                .icontitle {
+                  .icon {
+                    svg {
+                      path {
+                        fill: darken($primary, 25%);
+                      }
+                    }
+                  }
+
+                  .title {
+                    color: darken($primary, 25%);
+                  }
+                }
+
+                .arrow {
+                  svg {
+                    path {
+                      fill: darken($primary, 25%);
+                    }
+                  }
+                }
+              }
+
+              &.active {
+                .icontitle {
+                  .icon {
+                    svg {
+                      path {
+                        fill: darken($primary, 25%);
+                      }
+                    }
+                  }
+
+                  .title {
+                    color: darken($primary, 25%);
+                  }
+                }
+
+                .arrow {
+                  svg {
+                    path {
+                      fill: darken($primary, 25%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .offcanvas-footer {
+      // @include double-radius(bottom, left, 8, bottom, right, 8);
+      overflow: hidden;
+
+      .logout {
+        background: $primary;
+        @include flex-center-vert;
+        gap: size(8);
+        padding: size(14) size(16);
+
+        .icon {
+          @include square(20);
+          @include flex-center;
+
+          svg {
+            @include wh100;
+          }
+        }
+
+        .title {
+          color: $headingText;
+          @include font($primaryFont, 13, light, normal, 18);
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  &.offcanvas-bottom {
+    border-top: 0;
+  }
+
+  &.offcanvas-start {
+    border-right: 0;
+  }
+
+  &.offcanvas-end {
+    border-left: 0;
+  }
+
+  &.offcanvas-start {
+    border-right: 0;
+    @include w100;
+
+    @include breakpoint(mobile576) {
+      width: size(280);
+    }
+  }
+
+  &-header {
+    .logo {
+      width: size(100);
+      height: size(24);
+      @include flex-center;
+      overflow: hidden;
+      margin-left: 0;
+
+      img {
+        @include wh100;
+        object-fit: contain;
+      }
+    }
+
+    .btn-close {
+      @include radius(0);
+      @include transitionsall;
+      padding: 0;
+      margin: 0;
+      @include square(16);
+      @include flex-center;
+      overflow: hidden;
+
+      svg {
+        @include wh100;
+      }
+
+      @include hover {
+        opacity: 1;
+        @include rotate(180);
+
+        svg {
+          path {
+            stroke: $danger;
+          }
+        }
+      }
+    }
+  }
+
+  &-body {
+
+    .mobilelist {
+      @include list-vertical;
+
+      &-link {
+        display: inline-block;
+        @include w100;
+        padding: size(10) size(16);
+        @include setBgColor($white, $headingText);
+        @include border-single(bottom, solid, 1, $linkborder);
+        @include font($primaryFont, 13, light, normal, 18);
+        text-transform: uppercase;
+
+        &.active {
+          @include setBgColor($primaryLight, $headingText);
+          border-color: $primaryLight;
+        }
+
+        &:hover:not(.active) {
+          @include setBgColor($primaryLight, $headingText);
+          border-color: $primaryLight;
+        }
+      }
+
+      .accordion {
+        border: none;
+        border-radius: 0;
+        @include border-single(bottom, solid, 1, $linkborder);
+
+        &-item {
+          border: none;
+
+          &:first-of-type {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            .accordion-button {
+              border-top-left-radius: 0;
+              border-top-right-radius: 0;
+            }
+          }
+
+          &:last-of-type {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            .accordion-button {
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: 0;
+            }
+          }
+        }
+
+        &-button {
+          @include font($primaryFont, 13, light, normal, 18);
+          text-transform: uppercase;
+          padding: size(10) size(16);
+
+          &:not(.collapsed) {
+            box-shadow: none;
+            @include setBgColor($white, $headingText);
+            @include border-single(bottom, solid, 1, $linkborder);
+
+            &::after {
+              background-image: var(--bs-accordion-btn-icon);
+            }
+          }
+
+          &:focus {
+            border-color: $linkborder;
+          }
+        }
+
+        &-body {
+          @include flex-column;
+          gap: size(8);
+
+          .sublink {
+            color: $headingText;
+            @include font($primaryFont, 13, light, normal, 18);
+            text-transform: uppercase;
+            @include transitionscolor;
+
+            @include hover {
+              color: darken($primary, 20%);
+            }
+          }
+        }
+
+        &.active {
+          border-color: $primaryLight;
+
+          .accordion-button {
+            @include setBgColor($primaryLight, $headingText);
+            border-color: $primaryLight;
+          }
+        }
+
+        &:hover:not(.active) {
+          border-color: $primaryLight;
+          
+          .accordion-button {
+            @include setBgColor($primaryLight, $headingText);
+            border-color: $primaryLight;
+          }
+        }
+      }
+    }
+
+
+		&::-webkit-scrollbar {
+			background: transparent;
+			width: size(8);
+		}
+
+		&::-webkit-scrollbar-thumb {
+			// background: darken($primary, 25%);
+      @include radius(8);
+		}
+
+  }
+}

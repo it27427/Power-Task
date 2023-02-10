@@ -1,0 +1,36 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.swiper {
+  &-button-next,
+  &-button-prev {
+    @include flex-center;
+    @include square(32);
+    overflow: hidden;
+    padding: size(8);
+    @include border(solid, 1, $primaryText);
+    @include circle;
+
+    @include breakpoint(mobile768) {
+      @include square(48);
+      padding: size(16);
+    }
+
+    svg {
+      @include wh100;
+    }
+
+    &:hover:not(.swiper-button-disabled) {
+      background: $primary;
+      border-color: $primary;
+    }
+    
+    &::after {
+      font-size: 0;
+      line-height: 0;
+      width: 0;
+      height: 0;
+      display: none;
+    }
+  }
+}

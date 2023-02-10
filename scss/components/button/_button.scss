@@ -1,0 +1,16 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+  opacity: 1;
+  font-size: size(13);
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}

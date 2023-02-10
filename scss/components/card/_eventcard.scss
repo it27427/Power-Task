@@ -1,0 +1,72 @@
+@use '../../global' as *;
+@use '../../partials' as *;
+
+.cardevent {
+  background: $white;
+  @include w100;
+  @include flex;
+  gap: size(16);
+
+  .dateinfo {
+    position: relative;
+    width: 15%;
+    height: size(36);
+    background: lighten($pandoracolor, 30%);
+    @include flex-center;
+    font-size: size(12);
+    font-weight: 500;
+
+    .ribbon {
+      @include square(28);
+      @include setBgColor($primary, $white);
+      font-size: size(10);
+      font-weight: 500;
+      @include circle;
+      @include flex-center;
+      text-align: center;
+      position: absolute;
+      top: size(-18);
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  .cardinfo {
+    width: 85%;
+    @include flex-column;
+    gap: size(8);
+
+    .infoheader {
+      @include border-single(bottom, solid, 1, $btnbg);
+      @include flex-center-between;
+      padding-bottom: size(8);
+
+      .title {
+        color: $headingText;
+        font-size: size(18);
+      }
+
+      .btn-download {
+        background: $buttonborder;
+        border: 0;
+        @include square(32);
+        @include circle;
+      }
+    }
+
+    .infobody {
+      @include flex-column;
+      gap: size(8);
+
+      .infotext {
+        color: $primaryText;
+        font-size: size(15);
+      }
+
+      .datetime {
+        color: $gray;
+        font-size: size(13);
+      }
+    }
+  }
+}

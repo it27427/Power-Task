@@ -1,0 +1,340 @@
+@use '../global'as *;
+@use '../partials'as *;
+
+.headline-section {
+  background: $headlinebg;
+  box-shadow: $headershadow;
+
+  marquee {
+    @include w100;
+    height: size(40);
+    @include flex-center-vert;
+
+    .detail {
+      @include flex-center-vert;
+      gap: size(8);
+
+      .icon {
+        @include square(34);
+        @include flex-center;
+        overflow: hidden;
+
+        img {
+          @include wh100;
+          object-fit: cover;
+        }
+      }
+
+      .info {
+        @include flex-center-vert;
+        gap: size(8);
+
+        &-text {
+          color: $white;
+          font-size: size(14);
+          font-weight: 500;
+        }
+
+        &-link {
+          font-size: size(14);
+          color: $yellow;
+          font-weight: 500;
+          @include transitionscolor;
+
+          @include hover {
+            color: $pendingcolor;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main {
+  padding: size(32) 0;
+
+  &-left {
+    .leftlist {
+      @include list-horizontal;
+      gap: size(8);
+      flex-wrap: wrap;
+
+      &-item {
+        width: calc(100% / 2 - size(4));
+      }
+
+      &-link {
+        background: $white;
+        box-shadow: $headershadow;
+        @include flex-center-column;
+        gap: size(8);
+        text-align: center;
+        padding: size(12);
+        @include radius(8);
+        @include h100;
+
+        .icon {
+          @include setBgColor($primary, $white);
+          @include circle;
+          @include square(48);
+          @include flex-center;
+
+          i {
+            color: inherit;
+            font-size: 1.5rem;
+          }
+        }
+
+        .text {
+          font-size: size(12);
+          font-weight: 500;
+          color: $black;
+          @include text-overflow;
+        }
+      }
+    }
+  }
+
+  &-center {
+    @include flex-column;
+    gap: size(32);
+
+    .bannerslider {
+      .carousel {
+        @include radius(8);
+        overflow: hidden;
+  
+        &-item {
+          max-height: size(290);
+          overflow: hidden;
+        }
+      
+        &-caption {
+          right: 0;
+          bottom: 0;
+          left: 0;
+          padding: size(10);
+          @include setBgColor(rgba($black, 0.5), $white);
+          text-align: left;
+    
+          h5 {
+            color: inherit;
+            font-size: size(18);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .tableinfo {
+      .table {
+        background: $white;
+
+        thead {
+          th {
+            vertical-align: middle;
+            text-align: center;
+            font-size: size(13);
+            font-weight: 500;
+            color: $primary;
+          }
+        }
+        
+        tbody {
+          td {
+            vertical-align: middle;
+            text-align: center;
+  
+            span {
+              font-size: size(13);
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+
+    .events {
+      @include flex-center-column;
+
+      .nav-tabs {
+        border: 0;
+        @include radius(80);
+        overflow: hidden;
+        background: $artistcolor;
+        position: relative;
+        top: size(18);
+        z-index: 10;
+        
+        .nav-link {
+          margin-bottom: 0;
+          border: 0;
+          @include radius(0);
+          @include setBgColor(transparent, $white);
+          font-size: size(14);
+          font-weight: 600;
+
+          &.active {
+            @include setBgColor($primary, $white);
+          }
+        }
+      }
+      
+      .allevents {
+        background: $white;
+        box-shadow: $headershadow;
+        @include radius(8);
+        padding: size(48) size(10);
+        @include flex-column;
+        gap: size(32);
+        max-height: size(350);
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
+    }
+  }
+
+  &-right {
+    @include flex-column;
+    gap: size(24);
+    @include w100;
+
+    .manager {
+      background: $white;
+      box-shadow: $headershadow;
+      @include flex-column;
+      gap: size(8);
+      @include radius(8);
+      @include w100;
+      padding: size(20) size(10);
+
+      &-header {
+        @include flex-center-column;
+        gap: size(8);
+
+        .avatar {
+          @include square(100);
+          @include flex-center;
+          overflow: hidden;
+
+          img {
+            @include wh100;
+            object-fit: cover;
+          }
+        }
+
+        .info {
+          @include flex-center-column;
+          
+          .name {
+            font-size: size(18);
+            color: $primary;
+          }
+
+          .designation {
+            font-size: size(14);
+            font-weight: 500;
+            color: $primaryText;
+          }
+        }
+      }
+
+      &-body {
+        .text {
+          color: $primaryText;
+          font-size: size(13);
+          font-weight: 400;
+          text-align: center;
+        }
+      }
+    }
+
+    .wishes {
+      @include flex-center-column;
+
+      .nav-tabs {
+        border: 0;
+        @include radius(80);
+        overflow: hidden;
+        background: $artistcolor;
+        position: relative;
+        top: size(18);
+        z-index: 10;
+        @include w100;
+        
+        .nav-link {
+          margin-bottom: 0;
+          border: 0;
+          @include radius(0);
+          @include setBgColor(transparent, $white);
+          font-size: size(14);
+          padding: size(8);
+          font-weight: 600;
+
+          &.active {
+            @include setBgColor($primary, $white);
+          }
+        }
+      }
+
+      .bdaywish {
+        background: $white;
+        box-shadow: $headershadow;
+        padding: size(32) size(10);
+        @include w100;
+        @include radius(8);
+        @include flex-column;
+        gap: size(8);
+
+        &-header {
+          @include w100;
+          @include flex-center;
+          text-align: center;
+          padding-bottom: size(8);
+          @include border-single(bottom, solid, 1, lighten($gray, 40%));
+
+          .title {
+            font-size: size(16);
+            font-weight: 600;
+            color: $headlinebg;
+            text-transform: uppercase;
+          }
+        }
+
+        &-body {
+          @include w100;
+          @include flex-center-column;
+          gap: size(8);
+
+          .avatar {
+            @include square(60);
+            @include flex-center;
+            @include circle;
+            overflow: hidden;
+
+            img {
+              @include wh100;
+              object-fit: cover;
+            }
+          }
+
+          .info {
+            @include flex-center-column;
+            
+            .name {
+              font-size: size(16);
+              color: $black;
+            }
+
+            .position,
+            .id {
+              font-size: size(13);
+              font-weight: normal;
+              color: $primaryText;
+            }
+          }
+        }
+      }
+    }
+  }
+}
