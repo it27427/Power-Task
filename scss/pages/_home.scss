@@ -190,6 +190,16 @@
         max-height: size(350);
         overflow-y: scroll;
         overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+          width: size(8);
+          @include radius(8);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          @include radius(8);
+          background: rgba($black, 0.25);
+        }
       }
     }
   }
