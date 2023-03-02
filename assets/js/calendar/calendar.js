@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
     headerToolbar: {
       left: 'prev,next',
       center: 'title',
-      right: 'timeGridDay,timeGridWeek,dayGridMonth,multiMonthYear,listDay,addtask'
+      right: 'timeGridDay,timeGridWeek,dayGridMonth,multiMonthYear,listDay,addtask,addtable'
     },
     views: {
       listDay: { buttonText: 'Schedule' },
@@ -113,6 +113,14 @@ document.addEventListener('DOMContentLoaded', function() {
           const modal = document.querySelector('#taskModal')
           const taskModal = new bootstrap.Modal(modal)
           taskModal.show()
+        }
+      },
+      addtable: {
+        text: 'View Table',
+        click: function() {
+          const modalTable = document.querySelector('#tableModal')
+          const tableModal = new bootstrap.Modal(modalTable)
+          tableModal.show()
         }
       },
     },

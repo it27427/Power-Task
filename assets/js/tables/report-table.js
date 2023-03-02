@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('#tablereport').DataTable({
-    dom: 'iBfrtp<"bottom"l>',
+    dom: 'Bfrtip',
     buttons: [
       'excel', 'print'
     ],

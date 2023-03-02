@@ -363,9 +363,91 @@
         </div>
 
         <div class="col-md-9">
-          <div class="main-calendar">
-            <div class="calendarbox">
-              <div id="calendar"></div>
+          <div class="main-charts">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="chart-tab-1" data-bs-toggle="tab" data-bs-target="#chart-tab-1-pane" type="button" role="tab" aria-controls="chart-tab-1-pane" aria-selected="true">Chart1</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chart-tab-2" data-bs-toggle="tab" data-bs-target="#chart-tab-2-pane" type="button" role="tab" aria-controls="chart-tab-2-pane" aria-selected="false">Chart2</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chart-tab-3" data-bs-toggle="tab" data-bs-target="#chart-tab-3-pane" type="button" role="tab" aria-controls="chart-tab-3-pane" aria-selected="false">Chart3</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chart-tab-4" data-bs-toggle="tab" data-bs-target="#chart-tab-4-pane" type="button" role="tab" aria-controls="chart-tab-4-pane" aria-selected="false">Chart4</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chart-tab-5" data-bs-toggle="tab" data-bs-target="#chart-tab-5-pane" type="button" role="tab" aria-controls="chart-tab-5-pane" aria-selected="false">Chart5</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chart-tab-6" data-bs-toggle="tab" data-bs-target="#chart-tab-6-pane" type="button" role="tab" aria-controls="chart-tab-6-pane" aria-selected="false">Chart6</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chart-tab-7" data-bs-toggle="tab" data-bs-target="#chart-tab-7-pane" type="button" role="tab" aria-controls="chart-tab-7-pane" aria-selected="false">Chart7</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chart-tab-8" data-bs-toggle="tab" data-bs-target="#chart-tab-8-pane" type="button" role="tab" aria-controls="chart-tab-8-pane" aria-selected="false">Chart8</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chart-tab-9" data-bs-toggle="tab" data-bs-target="#chart-tab-9-pane" type="button" role="tab" aria-controls="chart-tab-9-pane" aria-selected="false">Chart9</button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="chart-tab-1-pane" role="tabpanel" aria-labelledby="chart-tab-1" tabindex="0">
+                <div class="chartbox">
+                  <canvas id="lineChart" width="600" height="400"></canvas>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="chart-tab-2-pane" role="tabpanel" aria-labelledby="chart-tab-2" tabindex="0">
+                <div class="chartbox">
+                  <canvas id="barChart" width="600" height="400"></canvas>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="chart-tab-3-pane" role="tabpanel" aria-labelledby="chart-tab-3" tabindex="0">
+                <div class="chartbox">
+                  <canvas id="radarChart" width="600" height="400"></canvas>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="chart-tab-4-pane" role="tabpanel" aria-labelledby="chart-tab-4" tabindex="0">
+                <div class="chartbox">
+                  <canvas id="mixedChart" width="600" height="400"></canvas>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="chart-tab-5-pane" role="tabpanel" aria-labelledby="chart-tab-5" tabindex="0">
+                <div class="chartbox">
+                  <canvas id="" width="600" height="400"></canvas>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="chart-tab-6-pane" role="tabpanel" aria-labelledby="chart-tab-6" tabindex="0">
+                <div class="chartbox">
+                  <canvas id="" width="600" height="400"></canvas>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="chart-tab-7-pane" role="tabpanel" aria-labelledby="chart-tab-7" tabindex="0">
+                <div class="chartbox">
+                  <canvas id="" width="600" height="400"></canvas>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="chart-tab-8-pane" role="tabpanel" aria-labelledby="chart-tab-8" tabindex="0">
+                <div class="chartbox">
+                  <canvas id="" width="600" height="400"></canvas>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="chart-tab-9-pane" role="tabpanel" aria-labelledby="chart-tab-9" tabindex="0">
+                <div class="chartbox">
+                  <canvas id="" width="600" height="400"></canvas>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -384,205 +466,15 @@
     </div>
   </footer>
   <!-- FOOTER-SECTION END -->
-
-  <!-- ADD-TASK MODAL START -->
-  <div class="modal fade taskmodal" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="taskModalLabel">Add Task</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 6L6 18M6 6L18 18" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="addtasks">
-            <div class="row g-3 align-items-center">
-              <div class="col-3">
-                <label for="title" class="tasklabel">Title*</label>
-              </div>
-              
-              <div class="col-9">
-                <input type="text" id="tasktitle" class="taskfield" placeholder="Add a title">
-              </div>
-            </div>
-
-            <div class="row g-3 align-items-center">
-              <div class="col-3">
-                <label class="tasklabel">Time</label>
-              </div>
-
-              <div class="col-9">
-                <div class="row g-3 align-items-center">
-                  <div class="col-lg-6">
-                    <select id="dateselect">
-                      <option value="">Thu Feb 16, 2023</option>
-                      <option value="">Fri Feb 17, 2023</option>
-                      <option value="">Sat Feb 18, 2023</option>
-                      <option value="">Sun Feb 19, 2023</option>
-                    </select>
-                  </div>
-
-                  <div class="col-lg-3">
-                    <select id="timeselect">
-                      <option value="">6:15 pm</option>
-                      <option value="">7:45 pm</option>
-                      <option value="">8:30 pm</option>
-                      <option value="">9:00 pm</option>
-                    </select>
-                  </div>
-
-                  <div class="col-lg-3">
-                    <select id="select-time">
-                      <option value="">7:15 pm</option>
-                      <option value="">8:15 pm</option>
-                      <option value="">9:35 pm</option>
-                      <option value="">10:45 pm</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row g-3 align-items-center">
-              <div class="col-3">
-                <label for="taskdescriptions" class="tasklabel">Description</label>
-              </div>
-              
-              <div class="col-9">
-                <textarea id="taskdescriptions" class="taskfield" rows="5"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn-discard" data-bs-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-save" id="save-button">Save</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ADD-TASK MODAL END -->
-
-  <!-- ADD-TASK MODAL START -->
-  <div class="modal fade taskmodal" id="tableModal" tabindex="-1" aria-labelledby="tableModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="taskModalLabel">BIFPCL</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 6L6 18M6 6L18 18" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        <div class="modal-body">
-          <table id="tablereport" class="table table-responsive w-100">
-            <thead>
-              <tr>
-                <th>SL NO</th>
-                <th>Particular</th>
-                <th>Responsibility</th>
-                <th>Target Date</th>
-              </tr>
-            </thead>  
-  
-            <tbody>    
-              <tr>
-                <td>1</td>
-                <td>There are no toilets near Stage 1</td>
-                <td>Toilets near Stage 1 available</td>
-                <td>Points may be closed</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>There are no toilets near Stage 1</td>
-                <td>Toilets near Stage 1 available</td>
-                <td>Points may be closed</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>There are no toilets near Stage 1</td>
-                <td>Toilets near Stage 1 available</td>
-                <td>Points may be closed</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>There are no toilets near Stage 1</td>
-                <td>Toilets near Stage 1 available</td>
-                <td>Points may be closed</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>There are no toilets near Stage 1</td>
-                <td>Toilets near Stage 1 available</td>
-                <td>Points may be closed</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>There are no toilets near Stage 1</td>
-                <td>Toilets near Stage 1 available</td>
-                <td>Points may be closed</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>There are no toilets near Stage 1</td>
-                <td>Toilets near Stage 1 available</td>
-                <td>Points may be closed</td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>There are no toilets near Stage 1</td>
-                <td>Toilets near Stage 1 available</td>
-                <td>Points may be closed</td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>There are no toilets near Stage 1</td>
-                <td>Toilets near Stage 1 available</td>
-                <td>Points may be closed</td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td>There are no toilets near Stage 1</td>
-                <td>Toilets near Stage 1 available</td>
-                <td>Points may be closed</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn-discard" data-bs-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-save" id="save-button">Save</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ADD-TASK MODAL END -->
   
   <!-- BOOTSTRAP JS (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <!-- FULL-CALENDAR (CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js"></script>
-  <!-- CALENDAR JS -->
-  <script src="assets/js/calendar/calendar.js"></script>
-  <!-- nice select -->
-  <script src="assets/js/nice-select/nice-select2.js"></script>
-  <!-- CUSTOM SELECT -->
-  <script src="assets/js/nice-select/modalselect.js"></script>
-
-  <!-- DATA-TABLE -->
-  <script src="assets/js/jquery/jquery.min.js"></script>
-  <script src="assets/js/datatable/jquery.dataTables.min.js"></script>
-  <script src="assets/js/datatable/dataTables.buttons.min.js"></script>
-  <script src="assets/js/datatable/jszip.min.js"></script>
-  <script src="assets/js/datatable/pdfmake.min.js"></script>
-  <script src="assets/js/datatable/vfs_fonts.js"></script>
-  <script src="assets/js/datatable/buttons.print.min.js"></script>
-  <script src="assets/js/datatable/buttons.html5.min.js"></script>
-  <!-- MOM-TABLE JS -->
-  <script src="assets/js/tables/report-table.js"></script>
+  <!-- CHART-JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+  <!-- LINE-CHART -->
+  <script src="assets/js/chart/linechart.js"></script>
+  <script src="assets/js/chart/barchart.js"></script>
+  <script src="assets/js/chart/radarchart.js"></script>
+  <script src="assets/js/chart/mixedchart.js"></script>
 </body>
 </html>
