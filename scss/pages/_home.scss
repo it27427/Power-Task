@@ -52,6 +52,7 @@
 
 .main {
   padding: size(32) 0;
+  min-height: 100vh;
 
   &-left {
     .leftlist {

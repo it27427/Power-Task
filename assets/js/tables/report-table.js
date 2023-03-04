@@ -4,6 +4,6 @@ $(document).ready(function() {
     buttons: [
       'excel', 'print'
     ],
-    searching: false,
+    searching: true,
   });
 });

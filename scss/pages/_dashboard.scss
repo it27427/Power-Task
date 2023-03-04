@@ -1,0 +1,59 @@
+@use '../global'as *;
+@use '../partials'as *;
+
+.dropdowncontents {
+  .accordion {
+    @include flex-column;
+    gap: size(12);
+
+    &-item {
+      border: 0;
+      @include radius(0);
+    
+      &:first-of-type {
+        .accordion-button {
+          border-top-left-radius: 0;
+          border-top-right-radius:0;
+        }
+      }
+    
+      &:last-of-type {
+        .accordion-button {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius:0;
+        }
+      }
+    }
+    
+    &-button {
+      font-size: size(15);
+      padding: size(10);
+
+      &:not(.collapsed) {
+        @include setBgColor(transparent, $black);
+        box-shadow: none;
+      
+        &::after {
+          background-image: var(--bs-accordion-btn-icon);
+        }
+      }
+    }
+    
+    &-body {
+      padding: size(8);
+
+      .nav-pills {
+        .nav-link {
+          font-size: size(14);
+          font-weight: 500;
+          color: lighten($black, 20%);
+          text-align: left;
+
+          &.active {
+            @include setBgColor($primary, $white);
+          }
+        }
+      }
+    }
+  }
+}
