@@ -352,6 +352,12 @@
   <main class="main">
     <div class="container">
       <div class="row g-3 align-items-start">
+        <div class="col-12">
+          <div class="d-flex align-items-cente justify-content-center mb-3">
+            <h4 class="hoptitle">HOP Dashboard</h4>
+          </div>
+        </div>
+
         <div class="col-md-3 col-lg-2">
           <div class="dropdowncontents">
             <div class="accordion" id="accordionDropdown">
@@ -404,50 +410,49 @@
           </div>
         </div>
 
-        <div class="col-md-9 col-lg-10">
+        <div class="col-md-6 col-lg-6">
           <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="budget-1" role="tabpanel" aria-labelledby="budget-1-tab" tabindex="0">
               <div class="chartbox">
-                <canvas id="lineChart" width="600" height="400"></canvas>
+                <canvas id="lineChart" width="500" height="400"></canvas>
               </div>
             </div>
 
             <div class="tab-pane fade" id="budget-2" role="tabpanel" aria-labelledby="budget-2-tab" tabindex="0">
               <div class="chartbox">
-                <canvas id="barChart" width="600" height="400"></canvas>
+                <canvas id="barChart" width="500" height="400"></canvas>
               </div>
             </div>
 
             <div class="tab-pane fade" id="budget-3" role="tabpanel" aria-labelledby="budget-3-tab" tabindex="0">
               <div class="chartbox">
-                <canvas id="radarChart" width="600" height="400"></canvas>
+                <!-- <canvas id="radarChart" width="500" height="400"></canvas> -->
+                <canvas id="doughnut" width="500" height="400"></canvas>
               </div>
             </div>
           </div>
 
-          <div class="col-md-9">
-            <div class="tab-content" id="v-pills-tabContent">
-              <div class="tab-pane fade show active" id="otherbudget-1" role="tabpanel" aria-labelledby="otherbudget-1-tab" tabindex="0">
-                <div class="chartbox">
-                  <canvas id="mixedChart" width="600" height="400"></canvas>
-                </div>
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="otherbudget-1" role="tabpanel" aria-labelledby="otherbudget-1-tab" tabindex="0">
+              <div class="chartbox">
+                <canvas id="pie" width="500" height="400"></canvas>
               </div>
-  
-              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
-                Other Budget 2
-              </div>
-  
-              <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">
-                Other Budget 3
-              </div>
-  
-              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
-                Other Budget 4
-              </div>
-              
-              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">
-                Other Budget 5
-              </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+              Other Budget 2
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">
+              Other Budget 3
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
+              Other Budget 4
+            </div>
+            
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">
+              Other Budget 5
             </div>
           </div>
         </div>
@@ -474,7 +479,7 @@
   <!-- LINE-CHART -->
   <script src="assets/js/chart/linechart.js"></script>
   <script src="assets/js/chart/barchart.js"></script>
-  <script src="assets/js/chart/radarchart.js"></script>
-  <script src="assets/js/chart/mixedchart.js"></script>
+  <script src="assets/js/chart/doughnutchart.js"></script>
+  <script src="assets/js/chart/pieChart.js"></script>
 </body>
 </html>

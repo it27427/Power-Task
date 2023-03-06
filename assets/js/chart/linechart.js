@@ -37,6 +37,26 @@ function displayLineChart() {
     },
 
     // Configuration options go here
-    options: {}
+    options: {
+      plugins: {
+        title: {
+          position: 'bottom',
+          display: true,
+          text: 'Title will be here'
+        },
+        legend: {
+          display: true,
+          position: "right",
+          labels: {
+            boxWidth: 50,
+            color: "black",
+            font: {
+              size: 14,
+              weight: "normal"
+            }
+          }
+        }
+      }
+    }
   });
 }

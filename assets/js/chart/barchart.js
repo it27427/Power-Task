@@ -25,27 +25,28 @@ let barChartData = {
       data: [4, 7, 3, 6, 10,7,4,6]
     },
   ]
-};
+}
 
 let chartOptions = {
   responsive: true,
-  legend: {
-    position: "top"
-  },
-  title: {
-    display: true,
-    text: "Chart.js Bar Chart"
-  },
-  scales: {
-    yAxes: [{
-      ticks: {
-        beginAtZero: true
+  plugins: {
+    title: {
+      position: 'bottom',
+      display: true,
+      text: 'Title will be here'
+    },
+    legend: {
+      display: true,
+      position: "right",
+      labels: {
+        boxWidth: 50,
+        color: "black",
+        font: {
+          size: 14,
+          weight: "normal"
+        }
       }
-    }],
-    xAxes: [{
-      categoryPercentage: 0.4,
-      barThickness: 20
-    }]
+    }
   }
 }
 
