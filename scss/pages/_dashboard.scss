@@ -62,3 +62,23 @@
   color: $black;
   font-weight: 500;
 }
+
+.table {
+  border-bottom: 0 !important;
+
+  thead {
+    tr {
+      th {
+        border-color: #ddd;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        border-color: #ddd;
+      }
+    }
+  }
+}

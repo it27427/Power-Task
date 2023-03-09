@@ -1,4 +1,4 @@
-let doughnutId = document.getElementById("D").getContext("2d");
+let doughnutId = document.getElementById("doughnut").getContext("2d");
 let doughnut = new Chart(doughnutId, {
   type: "doughnut",
   data: {
